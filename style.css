@@ -1,0 +1,349 @@
+/* Reset some default spacing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    background-color: #e5d9d9; /*#f4f4f4;*/
+    font-family: monospace, Arial, sans-serif;
+    font-size: x-large;
+}
+
+
+/* Container with border */
+.center-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    min-height: 100vh; /* instead of body height */
+}
+.studentInfo {
+    display: flex;
+    align-items: center;
+    border: 2px solid #333;
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 20px;
+    width: 750px;
+    margin: auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Profile image styling */
+.studentProfile img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    /*filter: grayscale(100%);*/
+    border: 3px solid #0077cc;
+    margin-right: 80px;
+    margin-left: 30px;
+}
+
+/* Student data */
+.studentData {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-left: 10px;
+}
+
+/* Styling labels and headings */
+.studentData span {
+    font-weight: bold;
+    color: #333;
+    margin-right: 5px;
+}
+
+.studentData h1,
+.studentData h2,
+.studentData h3 {
+    display: block;
+    font-weight: normal;
+    color: #444;
+}
+
+/* Button-style anchor */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0077cc;
+    color: #fff;
+    text-decoration: none;
+    border: 2px solid #0077cc;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: 15px;
+    width: fit-content;
+}
+
+.btn:hover {
+    background-color: #fff;
+    color: #0077cc;
+}
+
+/*Styling hometown.html*/
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* width: 180px; */
+    /* height: 100vh; */
+    background: #0d2231;
+    padding: 20px;
+    font-size: medium;
+    border-radius: 0 0 50px 0;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar a {
+    display: block;
+    color: #aaa;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 8px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.sidebar a.active{
+    background: #33a13d;
+    color: #ffffff;
+}
+.sidebar a:hover {
+    background: #444;
+    color: #fff;
+}
+
+.content {
+    margin-left: 250px; /* space for sidebar */
+    padding: 0 40px 0 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+section {
+    min-height: 100vh; /* each section full screen */
+    border-bottom: 1px solid #ccc;
+    text-align: justify;
+    font-size: large;
+    margin: 0 0 10px 0;
+    padding: 20px;
+    background: #f9fff9;
+    border-left: 5px solid black;
+    border-radius: 10px;
+}
+section.active{
+    border-left: 5px solid #33a13d;
+}
+section h1{
+    text-align: center;
+    margin-bottom: 10px;
+}
+section ul{
+    margin-left: 50px;
+    margin-bottom: 10px;
+    list-style-type: none;
+}
+/*Section Gallery*/
+.gallery {
+    margin-top: 15px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 5px solid #33a13d;
+    width: 350px;
+    height: 200px;
+    flex-shrink: 0;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Caption overlay */
+.gallery-item .caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    font-size: 15px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 0.3s ease;
+    border-radius: 0 0 6px 6px;
+}
+
+/* Hover effect for caption */
+.gallery-item:hover .caption {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/*Area Styling*/
+
+section h2 {
+    font-size: large;
+    margin-bottom: 15px;
+    color: #2a7a2f;
+}
+
+.area-lists {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.list-block {
+    flex: 1 1 200px;
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.list-block h3 {
+    color: #33a13d;
+    margin-bottom: 10px;
+}
+
+.list-block ul {
+    list-style: disc;
+    margin-left: 20px;
+    line-height: 1.8;
+}
+
+/*Lightbox Model Style*/
+/* Lightbox overlay */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+}
+
+/* Lightbox image */
+.lightbox-content {
+    position: relative;
+    display: inline-block;           /* shrink-wrap around image + caption */
+    max-width: 90vw;
+    max-height: 80vh;
+    text-align: center;
+}
+
+/* Caption */
+#lightbox-caption {
+    text-align: center;
+    color: #ccc;
+    padding: 10px;
+}
+
+/* Close button */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.close:hover {
+    color: #33a13d;
+}
+/* Arrows */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 40px;
+    transition: 0.3s;
+    user-select: none;
+}
+
+.prev { left: 20px; }
+.next { right: 20px; }
+
+.prev:hover, .next:hover {
+    color: #33a13d;
+}
+/* Lightbox container */
+
+#lightbox {
+    position: fixed;
+    inset: 0;
+    display: none;                  /* hidden by default */
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.9);
+    z-index: 9999;
+}
+
+/* Lightbox image */
+#lightbox-img {
+    display: block;
+    max-width: 90vw;
+    max-height: 80vh;
+    border-radius: 8px 8px 0 0;
+    box-shadow: 0 0 20px rgba(0,0,0,0.7);
+}
+
+/* Caption below image */
+#lightbox-caption {
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    font-size: 18px;
+    padding: 10px;
+    line-height: 1.4;
+    /*border-radius: 0 0 8px 8px;*/
+    box-sizing: border-box;
+}
